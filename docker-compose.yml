@@ -1,39 +1,37 @@
-version: '3.8'
-services:
-  php-apache-environment:
-    image: mutiararahmanda/kuis2
-    container_name: php-apache
-    depends_on:
-      - db
-    volumes:
-      - ./php/src:/var/www/html/
-    ports:
-      - 8000:80
-    networks:
-      - backend
-
-  db:
-    container_name: db
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: newsportal
-    ports:
-      - "3306:3306"
-    volumes:
-      - db:/var/lib/mysql
-      - ./reservation1.sql:/docker-entrypoint-initdb.d/reservation1.sql
-    networks:
-      - backend
-
-volumes:
-  db:
-
-networks:
-  backend:
-    name: backend-network
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.20.0.0/24
+version: "3.7" 
+ 
+services:   
+  mysqldb: 
+    image: srirahmi/kuis2    
+    container_name: mysqldb     
+    volumes: 
+      -	./mysqldb:/var/lib/mysql     
+    environment: 
+      -	MYSQL_ROOT_PASSWORD= admin 
+      -	MYSQL_DATABASE= paketwisata       
+      - MYSQL_USER= admin 
+      -	MYSQL_PASSWORD= Admin_123     
+    networks:       
+      backend:         
+      aliases:           
+        - mysqldb   
+  app:     
+    build:       
+    context: '.' 
+    dockerfile: Dockerfile     
+  container_name: web-php    
+  ports:       
+    - 8000:80
+  
+  volumes: 
+    - ./:/var/www/html     
+  depends_on:       
+    - mysqldb     
+  networks:       
+    backend:         
+      aliases:           
+        - webphp 
+ 
+  networks: 
+    backend:     
+      name: backend-network 
