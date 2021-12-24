@@ -2,10 +2,10 @@ version: "3.7"
  
 services:   
   mysqldb: 
-    image: srirahmi/kuis2    
+    image: srirahmi/uas   
     container_name: mysqldb     
     volumes: 
-      -	./mysqldb:/var/lib/mysql     
+      - ./mysqldb:/var/lib/mysql     
     environment: 
       -	MYSQL_ROOT_PASSWORD= admin 
       -	MYSQL_DATABASE= paketwisata       
