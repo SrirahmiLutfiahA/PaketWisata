@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Okt 2021 pada 13.22
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.4
+-- Generation Time: Dec 24, 2021 at 10:33 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `paketbus`
+-- Table structure for table `paketbus`
 --
 
 CREATE TABLE `paketbus` (
@@ -36,7 +36,7 @@ CREATE TABLE `paketbus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `paketbus`
+-- Dumping data for table `paketbus`
 --
 
 INSERT INTO `paketbus` (`Id`, `Jenis_Bus`, `Harga`, `Keterangan`, `lokasi_foto`) VALUES
@@ -55,7 +55,7 @@ INSERT INTO `paketbus` (`Id`, `Jenis_Bus`, `Harga`, `Keterangan`, `lokasi_foto`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `paketmobil`
+-- Table structure for table `paketmobil`
 --
 
 CREATE TABLE `paketmobil` (
@@ -67,7 +67,7 @@ CREATE TABLE `paketmobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `paketmobil`
+-- Dumping data for table `paketmobil`
 --
 
 INSERT INTO `paketmobil` (`Id`, `Jenis_Mobil`, `Harga`, `Keterangan`, `lokasi_foto`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `paketmobil` (`Id`, `Jenis_Mobil`, `Harga`, `Keterangan`, `lokasi_fo
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `paketwisata`
+-- Table structure for table `paketwisata`
 --
 
 CREATE TABLE `paketwisata` (
@@ -97,7 +97,7 @@ CREATE TABLE `paketwisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `paketwisata`
+-- Dumping data for table `paketwisata`
 --
 
 INSERT INTO `paketwisata` (`Id`, `Jenis_Paket`, `Harga`, `Keterangan`, `lokasi_foto`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `paketwisata` (`Id`, `Jenis_Paket`, `Harga`, `Keterangan`, `lokasi_f
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -127,54 +127,52 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `level`) VALUES
-(1, 'putri', 'putrisepti2@gmail.com', 'admin', 1),
-(2, 'agustin', 'agustinmida@gmail.com', 'user', 2),
-(5, 'Agustin Dwi ', 'agustinmida530@gmail.com', 'user', 2);
+(1, 'admin', 'admin@gmail.com', 'srirahmi990', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `paketbus`
+-- Indexes for table `paketbus`
 --
 ALTER TABLE `paketbus`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indeks untuk tabel `paketmobil`
+-- Indexes for table `paketmobil`
 --
 ALTER TABLE `paketmobil`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indeks untuk tabel `paketwisata`
+-- Indexes for table `paketwisata`
 --
 ALTER TABLE `paketwisata`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `paketwisata`
+-- AUTO_INCREMENT for table `paketwisata`
 --
 ALTER TABLE `paketwisata`
   MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
